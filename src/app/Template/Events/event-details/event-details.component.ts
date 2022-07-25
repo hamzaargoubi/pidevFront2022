@@ -25,34 +25,17 @@ export class EventDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-this.getEventID();
-;
+
   }
   getEventID(){
-    this.es.geteventID(this.route.snapshot.params.id).subscribe((data)=>{this.event=data;console.log(data);this.getcomments();})
   }
   getcomments(){
-    this.cs.getComments(this.event.id).subscribe((data:Comment)=>{this.comment=data;console.log(data)})
+   // this.cs.getComments(this.event.id).subscribe((data:Comment)=>{this.comment=data;console.log(data)})
   }
   addcomments(description){
-    this.comt.description=description;
-    this.comt.date=this.myDate
-    console.log(this.comt.date)
-    console.log(typeof this.comt.date)
-    this.comt.eventId="/api/events/"+this.route.snapshot.params.id;
-    this.comt.public=true;
-    this.cs.addComment(this.comt).subscribe((data)=>{
-      console.log(data);
-      console.log(description);
-      alert("Coment Added" )
-      this.reloadPage()
-    })
+
     }
-    reloadPage() {
-      setTimeout(()=>{
-        window.location.reload();
-      }, 100);
-    }
+    
 /*getcomments2(){
       this.cs.getComments(this.route2.snapshot.params.id).subscribe((da)=>{
        // console.log(data['hydra:member'])

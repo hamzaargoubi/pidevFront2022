@@ -28,20 +28,21 @@ export class CalendarComponent implements OnInit {
 console.log(this.calendarOptions);
   }
   getEvents() {
-    this.eventSer.getevent().subscribe((data) => {
-      this.allEvents = data;
-      this.allEventsCalendar=[];
-      this.allEvents.map((x) => {
+    // this.eventSer.getevent().subscribe((data) => {
+    //   this.allEvents = data;
+    //   this.allEventsCalendar=[];
+    //   this.allEvents.map((x) => {
 
-        this.allEventsCalendar.push({
-          title: x.title_event,
-          date: this.dateFormat(x.date_event, 'yyyy-mm-dd'),
-          description: x.description_event,
-        });
-        this.calendarOptions.events=this.allEventsCalendar;
-      });
-      console.log(this.allEventsCalendar);
-    });
+    //     this.allEventsCalendar.push({
+    //       title: x.title_event,
+    //       date: this.dateFormat(x.date_event, 'yyyy-mm-dd'),
+    //       description: x.description_event,
+    //     });
+    //     this.calendarOptions.events=this.allEventsCalendar;
+    //   });
+    //   console.log(this.allEventsCalendar);
+    // });
+   
   }
 
   handleDateClick(arg) {
