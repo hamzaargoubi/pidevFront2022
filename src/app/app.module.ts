@@ -55,6 +55,12 @@ import { ContactComponent } from './Template/contact/contact.component';
 import { UpdateUserComponent } from './Template/update-user/update-user.component';
 import { SendVerificationCodeComponent } from './Template/send-verification-code/send-verification-code.component';
 import { ChangePasswordComponent } from './Template/change-password/change-password.component';
+import { BankComponent } from './Template/bank/bank.component';
+import { BlogComponent } from './Template/blog/blog.component';
+import { BlogElementComponent } from './Template/blog/blog-element/blog-element.component';
+import { FormBlogComponent } from './Template/blog/form-blog/form-blog.component';
+import { BlogDetailsComponent } from './Template/blog/blog-details/blog-details.component';
+import { CommentElementComponent } from './Template/Comment/comment-element/comment-element.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -92,6 +98,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     UpdateUserComponent,
     SendVerificationCodeComponent,
     ChangePasswordComponent,
+    BankComponent,
+    BlogComponent,
+    BlogElementComponent,
+    FormBlogComponent,
+    BlogDetailsComponent,
+    FormBlogComponent,
+    CommentElementComponent
+    
 
 
 
@@ -115,7 +129,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NgxPaginationModule,
     Ng2SearchPipeModule,
     ToastrModule.forRoot(),
-    FullCalendarModule
+    FullCalendarModule,
 
 
 

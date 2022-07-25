@@ -23,6 +23,9 @@ import {AssociationComponent} from './Template/association/association.component
 import { ReclamationComponent } from './Template/reclamation/reclamation.component';
 import {AddOrUpdateAssociationComponent} from './Template/association/add-or-update-association/add-or-update-association.component';
 import { SendVerificationCodeComponent } from './Template/send-verification-code/send-verification-code.component';
+import { BankComponent } from './Template/bank/bank.component';
+import { BlogComponent } from './Template/blog/blog.component';
+import { BlogDetailsComponent } from './Template/blog/blog-details/blog-details.component';
 
 
 
@@ -30,7 +33,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: "home", component: HomeComponent},
   {path: "about", component: AboutComponent},
-
+  {path: "bank", component: BankComponent},
+  {path: "blog", component: BlogComponent},
+  {path: "blog/blog-details", component: BlogDetailsComponent},
 
 
   {path: "feedback", component: ReclamationComponent, canActivate: [RandomGuard], canLoad: [RandomGuard]},
@@ -41,7 +46,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: "home", component: HomeComponent, canActivate: [RandomGuard], canLoad: [RandomGuard]},
   {path: "about", component: AboutComponent, canActivate: [RandomGuard], canLoad: [RandomGuard]},
-  {path: "events", component: EventComponent, canActivate: [RandomGuard], canLoad: [RandomGuard]},
+  {path: "events", component: EventComponent},
   {path: "publications", component: PublicationsComponent, canActivate: [RandomGuard], canLoad: [RandomGuard]},
   {path: "login", component: LoginComponent,canActivate: [AuthGuard]},
   {path: "forgotPassword", component: SendVerificationCodeComponent,canActivate: [AuthGuard]},

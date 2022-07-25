@@ -30,47 +30,47 @@ export class FormEventComponent implements OnInit {
   }
 
   addevent(events) {
-    events.image1 = this.imageBase64;
-    events.image2 = this.imageBase641;
-    events.image3=this.imageBase642;
-    events.image4=this.imageBase643;
-    this.eventser.addevent(events).subscribe((data)=>{
-      console.log(data)
-      alert("Event Added" )
-      this.route.navigate(["home"])
-    })
+    // events.image1 = this.imageBase64;
+    // events.image2 = this.imageBase641;
+    // events.image3=this.imageBase642;
+    // events.image4=this.imageBase643;
+    // this.eventser.addevent(events).subscribe((data)=>{
+    //   console.log(data)
+    //   alert("Event Added" )
+    //   this.route.navigate(["home"])
+    //})
   }
 
     handleUpload(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-          this.imageBase64 = reader.result;
-      };
+      // const file = event.target.files[0];
+      // const reader = new FileReader();
+      // reader.readAsDataURL(file);
+      // reader.onload = () => {
+      //     this.imageBase64 = reader.result;
+      // };
   }
   handleUpload1(event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-        this.imageBase641 = reader.result;
-    };
+    // const file = event.target.files[0];
+    // const reader = new FileReader();
+    // reader.readAsDataURL(file);
+    // reader.onload = () => {
+    //     this.imageBase641 = reader.result;
+    // };
 }
 handleUpload2(event) {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = () => {
-      this.imageBase642 = reader.result;
-  };
+  // const file = event.target.files[0];
+  // const reader = new FileReader();
+  // reader.readAsDataURL(file);
+  // reader.onload = () => {
+  //     this.imageBase642 = reader.result;
+  // };
 }
 handleUpload3(event) {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = () => {
-      this.imageBase643 = reader.result;
-  };
+  // const file = event.target.files[0];
+  // const reader = new FileReader();
+  // reader.readAsDataURL(file);
+  // reader.onload = () => {
+  //     this.imageBase643 = reader.result;
+  // };
 }
 }

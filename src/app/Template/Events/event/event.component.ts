@@ -26,7 +26,6 @@ export class EventComponent implements OnInit {
     this.getEvent2();
   }
   getEvent2(){
-    this.es.getevent().subscribe((data)=>{this.events=data;console.log(data);})
   }
   getPage(page: any) {
     this.http.get(this.url).subscribe((data) => {
@@ -38,7 +37,7 @@ export class EventComponent implements OnInit {
   }
   delete(id){
     if(window.confirm('Are sure you want to delete this event ?')){
-  this.es.deleteEvent(id).subscribe(()=>{window.location.reload();})
+  
 
   }
 
