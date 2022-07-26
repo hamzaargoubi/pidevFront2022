@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { EventService } from './../../../Services/event.service';
 import { Component, Input, OnInit,Output } from '@angular/core';
 
 
@@ -20,24 +19,21 @@ export class EventComponent implements OnInit {
   url = "http://localhost:8000/api/events?page=${page}";
 
 
-  constructor(private es: EventService, private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.getEvent2();
   }
   getEvent2(){
   }
-  getPage(page: any) {
-    this.http.get(this.url).subscribe((data) => {
-      console.log(data);
-      this.events =data;
+  getPage() {
 
-    })
+
 
   }
   delete(id){
     if(window.confirm('Are sure you want to delete this event ?')){
-  
+
 
   }
 

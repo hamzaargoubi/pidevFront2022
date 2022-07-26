@@ -6,7 +6,6 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {takeUntil} from 'rxjs/operators';
 import {ConfirmDeleteComponent} from '../../confirm-delete/confirm-delete.component';
 import {Association} from '../../../Model/Association';
-import {EventService} from '../../../Services/event.service';
 import {Router} from '@angular/router';
 
 @Component({

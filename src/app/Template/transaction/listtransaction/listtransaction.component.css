@@ -1,0 +1,28 @@
+.row{
+  margin-top:50px;
+  padding: 0 10px;
+  width:100%
+}
+.clickable{
+  cursor: pointer;
+}
+
+.panel-heading div {
+margin-top: -18px;
+font-size: 15px;
+}
+.panel-heading div span{
+margin-left:10px;
+}
+.panel-body{
+display: none;
+}
+body {
+  background: #C5E1A5;
+}
+table
+{
+margin-left:auto;
+margin-right:auto;
+width: 100%;
+}

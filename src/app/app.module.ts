@@ -61,6 +61,13 @@ import { BlogElementComponent } from './Template/blog/blog-element/blog-element.
 import { FormBlogComponent } from './Template/blog/form-blog/form-blog.component';
 import { BlogDetailsComponent } from './Template/blog/blog-details/blog-details.component';
 import { CommentElementComponent } from './Template/Comment/comment-element/comment-element.component';
+import { TrascformComponent } from './Template/transaction/trascform/trascform.component';
+import { TransactionComponent } from './Template/transaction/transaction.component';
+import { ListtransactionComponent } from './Template/transaction/listtransaction/listtransaction.component';
+import { ElementtransComponent } from './Template/transaction/elementtrans/elementtrans.component';
+import { LoanComponent } from './Template/loan/loan.component';
+import { LoanformComponent } from './Template/Loan/loanform/loanform.component';
+import { LoandetailsComponent } from './Template/Loan/loandetails/loandetails.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -104,8 +111,13 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FormBlogComponent,
     BlogDetailsComponent,
     FormBlogComponent,
-    CommentElementComponent
+    CommentElementComponent,
+    TransactionComponent,
+    TrascformComponent,
+    ListtransactionComponent,
+    ElementtransComponent,
     
+
 
 
 
