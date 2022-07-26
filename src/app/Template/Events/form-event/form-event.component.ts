@@ -1,6 +1,5 @@
 import { EventD } from './../../../Model/EventD';
 import { Event } from 'src/app/Model/Event';
-import { EventService } from './../../../Services/event.service';
 import { Component, OnInit } from '@angular/core';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
@@ -24,7 +23,7 @@ export class FormEventComponent implements OnInit {
   typevalue:string;
   assocValue:string;
 
-  constructor(private eventser:EventService, private route:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

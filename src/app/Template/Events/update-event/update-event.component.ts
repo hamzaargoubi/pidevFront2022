@@ -1,4 +1,3 @@
-import { EventService } from './../../../Services/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventD } from './../../../Model/EventD';
 import { Component, OnInit } from '@angular/core';
@@ -31,8 +30,7 @@ export class UpdateEventComponent implements OnInit {
   imageBase643:any;
 
 
-  constructor(private router:ActivatedRoute, private es:EventService, private rt:Router,private datePipe: DatePipe) {
-    this.dateEvent = this.datePipe.transform(this.dateEvent, 'dd-MM-yyyy');
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -44,10 +42,10 @@ export class UpdateEventComponent implements OnInit {
   }
 
   handleUpload(event) {
-    
+
 }
 handleUpload1(event) {
-  
+
 }
 handleUpload2(event) {
 
