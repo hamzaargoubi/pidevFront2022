@@ -26,6 +26,8 @@ import { SendVerificationCodeComponent } from './Template/send-verification-code
 import { BankComponent } from './Template/bank/bank.component';
 import { BlogComponent } from './Template/blog/blog.component';
 import { BlogDetailsComponent } from './Template/blog/blog-details/blog-details.component';
+import { BlogElementComponent } from './Template/blog/blog-element/blog-element.component';
+import { FormBlogComponent } from './Template/blog/form-blog/form-blog.component';
 
 
 
@@ -36,6 +38,9 @@ const routes: Routes = [
   {path: "bank", component: BankComponent},
   {path: "blog", component: BlogComponent},
   {path: "blog/blog-details", component: BlogDetailsComponent},
+  {path: "blogelement", component: BlogElementComponent},
+  {path: "blogform", component: FormBlogComponent},
+
 
 
   {path: "feedback", component: ReclamationComponent, canActivate: [RandomGuard], canLoad: [RandomGuard]},

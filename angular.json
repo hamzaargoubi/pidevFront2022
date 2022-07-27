@@ -73,6 +73,7 @@
           },
           "configurations": {
             "production": {
+              "proxyConfig": "proxy.config.json",
               "browserTarget": "UnityAngular:build:production"
             }
           }

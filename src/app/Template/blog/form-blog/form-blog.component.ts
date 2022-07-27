@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from 'src/app/Model/Blog';
+import { PostServiceService } from 'src/app/Services/post-service.service';
 
 @Component({
   selector: 'app-form-blog',
@@ -8,10 +9,12 @@ import { Blog } from 'src/app/Model/Blog';
 })
 export class FormBlogComponent implements OnInit {
   blog: Blog;
-  constructor() { }
+  constructor(private blogService : PostServiceService) { }
 
   ngOnInit(): void {
     this.blog=new Blog();
   }
-
+  save(){
+    this.blogService.addPost(this.blog).subscribe();
+  }
 }

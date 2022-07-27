@@ -15,15 +15,15 @@
   <div class="w-50">
   <br>
   <br>
-  <div class="formt" >title </div>
+  <div class="formt" ></div>
   <br>
-  <div class="formo"> Description Event
+  <div class="formo"> 
   </div>
   <div class="ellipsis">
   <p>description</p>
   </div>
   <br>
-  <div class="formo"> Creation Date of Event
+  <div class="formo"> nom de la personne
   </div>
   <ul class="list-unstyled list-inline media-detail pull-left p-2">
     <li><i class="fa fa-calendar p-2 text-secondary font-weight-bold"></i>
@@ -50,7 +50,7 @@
                               </div> -->
                               <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                   <textarea class="form-control" name="description" placeholder="Your message"  ngModel #description="ngModel"></textarea>
-                                  <button type="submit" class="btn btn-primary" (click)=addcomment(f.value.description)>Submit</button>
+                                  <button type="submit" class="btn btn-primary" click="addComment(f.value.description)" >Submit</button>
                               </div>
                           </div>
                       </fieldset>

@@ -14,13 +14,13 @@
             <div class="account-wall">
                 <form class="form-signin">
 				id:
-                <input type="text" class="form-control"  required autofocus >
+                <input type="text" class="form-control"  required  name="id" [(ngModel)]="blog.id">
 				title:
-                <input type="text" class="form-control"  required  >
+                <input type="text" class="form-control"  required name="title" [(ngModel)]="blog.title"  >
 				text:
-				<input type="text" class="form-control" >
+				<input type="text" class="form-control" name="desc" [(ngModel)]="blog.description" >
 				
-                <button class="btn btn-lg btn-primary btn-block" value="save" type="submit">
+                <button class="btn btn-lg btn-primary btn-block" value="save" value="save"(click)="save()"  type="submit">
                    Save</button>
                 <label class="checkbox pull-left">
                 </label>

@@ -6,16 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CommentService {
-urlcomment="http://localhost:8000/api/comments?eventId=/api/events/";
-urlcomment2="http://localhost:8000/api/comments";
+urlcomment="http://localhost:8081/commment/";
   constructor(private http : HttpClient) { }
 
-  getComments(id):Observable<any>{
-      return this.http.get(this.urlcomment+id);
+  getComments(idpost):Observable<any>{
+      return this.http.get(this.urlcomment+"post-comments/"+idpost);
     }
    addComment(data){
-    return this.http.post(this.urlcomment2,data);
+    return this.http.post(this.urlcomment,data);
    }
+   
 
   }
 

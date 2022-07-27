@@ -130,6 +130,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     Ng2SearchPipeModule,
     ToastrModule.forRoot(),
     FullCalendarModule,
+    
 
 
 

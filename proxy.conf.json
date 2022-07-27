@@ -1,6 +1,13 @@
 {
-  "/api": {
-    "target": "http://127.0.0.1:8000",
-    "secure": false
-  }
+  
+  "/api/*": {
+    "target": "http://localhost:8081",
+    "secure": false,
+    "logLevel": "info"
+},
+"/myotherapp/*": {
+    "target": "http://localhost:4500",
+    "secure": false,
+    "logLevel": "info"
+}
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Blog } from 'src/app/Model/Blog';
+import { CommentService } from 'src/app/Services/comment.service';
 
 @Component({
   selector: 'app-blog-details',
@@ -6,12 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-details.component.css']
 })
 export class BlogDetailsComponent implements OnInit {
-  comments = [1,2,3,4,5,6];
-  constructor() { }
+  @Input() blog:Blog;
+  comments:Comment[];
+  constructor(private commentService:CommentService) { }
 
   ngOnInit(): void {
   }
-  addcomment(description){
+  DisplayComments(idpost:number){
+    this.commentService.getComments(idpost).subscribe(( data:  Comment[])=>this.comments= data);  }
+
+  addComment(test){
+    console.log(test);
+  }
 
   }
-}
+
+  
