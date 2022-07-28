@@ -80,7 +80,7 @@ export class AuthenticationService {
   private storeTokens(tokens: Token) {
     localStorage.setItem(this.JWT_TOKEN, tokens.token);
     localStorage.setItem(this.REFRESH_TOKEN, tokens.refresh_token);
-    console.log(localStorage.getItem(this.JWT_TOKEN));
+    // console.log(localStorage.getItem(this.JWT_TOKEN));
   }
 
   private removeTokens() {

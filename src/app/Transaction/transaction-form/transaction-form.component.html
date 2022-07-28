@@ -13,14 +13,23 @@
             <h1 class="text-center login-title">Ajout Element</h1>
             <div class="account-wall">
                 <form class="form-signin">
-				id:
-                <input type="text" class="form-control"  required  name="uuid" [(ngModel)]="blog.uuid">
-				title:
-                <input type="text" class="form-control"  required name="title" [(ngModel)]="blog.title"  >
-				text:
-				<input type="text" class="form-control" name="text" [(ngModel)]="blog.text" >
-				<input type="file" mat-raised-button color="primary" accept="image/*"
-                          (change)="onSelectFile($event)" />
+				amount:
+                <input type="text" class="form-control"  required  name="uuid" [(ngModel)]="transaction.amount">
+				description:
+                <input type="text" class="form-control"  required name="title" [(ngModel)]="transaction.description"  >
+				source:
+				<select #sourceSelect formControlName="orders" id="orders">
+          <option *ngFor="let source of sources; let i = index" [value]="source.uuid">
+            {{source.client.name}}
+          </option>
+        </select>
+				recipient:
+        <select #recipientSelect formControlName="recipients" id="recipients">
+          <option *ngFor="let recipient of recipients; let i = index" [value]="recipient.uuid">
+            {{recipient.client.name}}
+          </option>
+        </select>
+
                 <button class="btn btn-lg btn-primary btn-block" value="save" (click)="save()"  type="submit">
                    Save</button>
                 <label class="checkbox pull-left">
@@ -30,5 +39,6 @@
 
         </div>
     </div>
+
 </div>
 </body>

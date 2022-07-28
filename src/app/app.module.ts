@@ -61,6 +61,10 @@ import { BlogElementComponent } from './Template/blog/blog-element/blog-element.
 import { FormBlogComponent } from './Template/blog/form-blog/form-blog.component';
 import { BlogDetailsComponent } from './Template/blog/blog-details/blog-details.component';
 import { CommentElementComponent } from './Template/Comment/comment-element/comment-element.component';
+import { ReceivedTransactionsComponent } from './Transaction/received-transactions/received-transactions.component';
+import { SentTransactionsComponent } from './Transaction/sent-transactions/sent-transactions.component';
+import { TransactionElementComponent } from './Transaction/transaction-element/transaction-element.component';
+import { TransactionFormComponent } from './Transaction/transaction-form/transaction-form.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -104,8 +108,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FormBlogComponent,
     BlogDetailsComponent,
     FormBlogComponent,
-    CommentElementComponent
-    
+    CommentElementComponent,
+    ReceivedTransactionsComponent,
+    SentTransactionsComponent,
+    TransactionElementComponent,
+    TransactionFormComponent,
+
 
 
 
@@ -130,7 +138,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     Ng2SearchPipeModule,
     ToastrModule.forRoot(),
     FullCalendarModule,
-    
+
 
 
 

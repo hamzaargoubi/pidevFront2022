@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.postService.getPosts().subscribe(data =>{ this.listelement=data;
     console.log(this.listelement)});
-    
+
   }
 
 }

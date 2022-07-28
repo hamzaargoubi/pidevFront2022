@@ -1,0 +1,6 @@
+<div class="row">
+  <div class="col-3"><p *ngIf="recipient;else other_content">{{transaction.receipient.client.name}}</p><ng-template #other_content>{{transaction.source.client.name}}</ng-template></div>
+  <div class="col-3">{{transaction.amount}}</div>
+  <div class="col-3">{{transaction.approved}}</div>
+  <div class="col-3"><a [routerLink]=""></a></div>
+</div>
