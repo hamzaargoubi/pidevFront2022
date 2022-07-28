@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
-import { Tooltip } from 'Tooltip';
 
 @Component({
   selector: 'app-calendar',
@@ -8,7 +7,7 @@ import { Tooltip } from 'Tooltip';
   styleUrls: ['./calendar.component.css'],
 })
 export class CalendarComponent implements OnInit {
-  dateFormat : any;
+  dateFormat: any;
   allEventsCalendar = [];
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -20,11 +19,11 @@ export class CalendarComponent implements OnInit {
     eventColor: 'rgba(140,47,192,1)'
   };
   allEvents: any[];
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.getEvents();
-console.log(this.calendarOptions);
+    console.log(this.calendarOptions);
   }
   getEvents() {
     // this.eventSer.getevent().subscribe((data) => {
@@ -47,7 +46,7 @@ console.log(this.calendarOptions);
   handleDateClick(arg) {
     alert('date click! ' + arg.dateStr);
   }
-  infoEvent(event){
+  infoEvent(event) {
 
     console.log(event);
     console.log(event.event._def.title);

@@ -6,26 +6,26 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  url="http://127.0.0.1:8000/api/users"
+  url = "http://localhost:8081/clients/save"
 
 
-  getUserByUsername(username){
-  return  this.http.get(this.url+"?cin="+username)
+  getUserByUsername(username) {
+    return this.http.get(this.url + "?cin=" + username)
   }
 
-  addUser(user){
-    return this.http.post(this.url,user);
+  addUser(user) {
+    return this.http.post(this.url, user);
   }
 
 
-  getUserById(id){
-    return this.http.get(this.url+"/"+id)
+  getUserById(id) {
+    return this.http.get(this.url + "/" + id)
   }
 
-  updateUser(){
-    
+  updateUser() {
+
   }
 
 

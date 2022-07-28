@@ -15,21 +15,20 @@ export class LoginComponent implements OnInit {
   // user:UserById=new UserById();
   // email:Email=new Email();
   // id:string;
-  constructor(private auth:AuthenticationService,private router:Router,private http:HttpClient,private userservice:UserService) { }
+  constructor(private auth: AuthenticationService, private router: Router, private http: HttpClient, private userservice: UserService) { }
 
   ngOnInit(): void {
   }
 
-  login(forms){
-    this.auth.login(
-forms
-    )
-    .subscribe(success => {
-      if (success) {
-        this.router.navigate(['/home']);
-        this.reloadPage();
-      }
-    });
+  login(forms) {
+    console.log(forms)
+    this.auth.login(forms)
+      .subscribe(success => {
+        if (success) {
+          this.router.navigate(['/home']);
+          this.reloadPage();
+        }
+      });
     // this.id=localStorage.getItem("id");
     // this.userservice.getUserById(this.id).subscribe((data:any)=>{
     //   this.user=data;
@@ -40,11 +39,11 @@ forms
 
   }
 
-    reloadPage() {
-      setTimeout(()=>{
-        window.location.reload();
-      }, 100);
-    }
+  reloadPage() {
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
+  }
 
 
 

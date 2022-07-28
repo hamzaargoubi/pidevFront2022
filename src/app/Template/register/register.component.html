@@ -7,59 +7,46 @@
       <div class="row">
         <div class="col-8 mx-auto">
           <h1 class="h1 text-center">Register</h1>
- <form #f="ngForm">
+          <form #f="ngForm">
 
-  <div class="form-group">
-    <label for="cin">username</label>
-    <input type="text" name="cin" class="form-control input-round" placeholder="" ngModel #cin="ngModel">
-  </div>
+            <div class="form-group">
+              <label for="lastname">Name</label>
+              <input type="text" name="name" class="form-control input-round" placeholder="" ngModel #name="ngModel">
+            </div>
 
-  <div class="form-group">
-    <label for="lastname">Last name</label>
-    <input type="text" name="lastname" class="form-control input-round" placeholder="" ngModel #lastname="ngModel">
-  </div>
+            <div class="form-group">
+              <label for="adress">Phone</label>
+              <input type="text" name="phone" class="form-control input-round" placeholder="" ngModel #phone="ngModel">
+            </div>
 
-  <div class="form-group">
-    <label for="lastname">First name</label>
-    <input type="text" name="firstname" class="form-control input-round" placeholder="" ngModel #firstname="ngModel">
-  </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control input-round" placeholder="" ngModel #email="ngModel">
 
-  <div class="form-group">
-    <label for="adress">Adress</label>
-    <input type="text" name="adress" class="form-control input-round" placeholder="" ngModel #adress="ngModel">
-  </div>
+            </div>
+            <div class="form-group">
+              <label for="confirmMail">Confirm Email</label>
+              <input type="email" name="confirmMail" id="confirmMail" class="form-control input-round" placeholder="">
+            </div>
 
-  <div class="form-group">
-    <label for="birthday">Birth Date</label>
-    <input type="date" name="birthday"  class="form-control input-round" placeholder="" ngModel #birthday="ngModel">
+            <div class="form-group">
+              <label for="plainpassword">Password</label>
+              <input type="password" name="password" class="form-control input-round" placeholder="" ngModel
+                #password="ngModel">
+            </div>
 
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" name="email"  class="form-control input-round" placeholder="" ngModel #email="ngModel">
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" name="confirmPassword" id="confirmPassword" class="form-control input-round"
+                placeholder="">
 
-  </div>
-  <div class="form-group">
-    <label for="confirmMail">Confirm Email</label>
-    <input type="email" name="confirmMail" id="confirmMail" class="form-control input-round" placeholder="">
+            </div>
+            <div class="text-center mx-auto">
+              <button class="btn btn-lg btn-block btn-login" type="submit" (click)="addUser(f.value)">Register</button>
+            </div>
 
-  </div>
-  <div class="form-group">
-    <label for="plainpassword">Password</label>
-    <input type="password" name="plainpassword"  class="form-control input-round" placeholder=""ngModel #plainpassword="ngModel">
-
-  </div>
-  <div class="form-group">
-    <label for="confirmPassword">Confirm Password</label>
-    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control input-round" placeholder="">
-
-  </div>
-  <div class="text-center mx-auto">
-    <button class="btn btn-lg btn-block btn-login" type="submit" (click)="addUser(f.value)">Register</button>
-  </div>
-
- </form>
- <p>Already having account? <a [routerLink]="['/login']" class="create float-right">Sign in</a></p>
+          </form>
+          <p>Already having account? <a [routerLink]="['/login']" class="create float-right">Sign in</a></p>
         </div>
 
 

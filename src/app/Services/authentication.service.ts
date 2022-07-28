@@ -10,17 +10,17 @@ import { UserService } from './user.service';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  loginUrl="http://localhost:8000/api/login"
-  refreshUrl="http://127.0.0.1:8000/api/token/refresh";
+  loginUrl = "http://localhost:8081/login"
+  refreshUrl = "http://127.0.0.1:8000/api/token/refresh";
 
   private readonly JWT_TOKEN = 'JWT_TOKEN';
   private readonly REFRESH_TOKEN = 'REFRESH_TOKEN';
   public loggedUser;
 
 
-  constructor(private http: HttpClient,private userservice: UserService) {}
+  constructor(private http: HttpClient, private userservice: UserService) { }
 
-  loggedInUser(){
+  loggedInUser() {
     return this.loggedUser;
   }
 
@@ -29,7 +29,7 @@ export class AuthenticationService {
   //   return localStorage.getItem("user");
   // }
 
-  login(user:User): Observable<boolean> {
+  login(user: User): Observable<boolean> {
     return this.http.post<any>(this.loginUrl, user)
       .pipe(
         tap(tokens => this.doLoginUser(user.username, tokens)),
@@ -61,19 +61,19 @@ export class AuthenticationService {
   }
 
   private doLoginUser(username: string, tokens: Token) {
-    this.loggedUser=new User();
+    this.loggedUser = new User();
     //use JWT() for decode. Not jwt-decode() !!
-          // let t: any;
-          // t = JWT(tokens);
-          // localStorage.setItem('currentUser', JSON.stringify(t.user));
-    this.userservice.getUserByUsername(username).subscribe((data)=>{
+    // let t: any;
+    // t = JWT(tokens);
+    // localStorage.setItem('currentUser', JSON.stringify(t.user));
+    this.userservice.getUserByUsername(username).subscribe((data) => {
       localStorage.setItem('id', JSON.stringify(data[0].id));
-      this.loggedUser.id=data[0].id;
-      this.loggedUser.username=data[0].cin;
-      this.loggedUser.firstname=data[0].firstname;
-      this.loggedUser.lastname=data[0].lastname;
-      this.loggedUser.birthday=data[0].birthday;
-      this.loggedUser.email=data[0].email;
+      this.loggedUser.id = data[0].id;
+      this.loggedUser.username = data[0].cin;
+      this.loggedUser.firstname = data[0].firstname;
+      this.loggedUser.lastname = data[0].lastname;
+      this.loggedUser.birthday = data[0].birthday;
+      this.loggedUser.email = data[0].email;
       console.log(this.loggedUser.id);
 
       // this.loggedUser.id=data[0].id;

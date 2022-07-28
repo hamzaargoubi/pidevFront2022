@@ -9,12 +9,13 @@ import { UserService } from 'src/app/Services/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private userService:UserService,private route:Router) { }
+  constructor(private userService: UserService, private route: Router) { }
 
   ngOnInit(): void {
   }
 
-  addUser(user){
+  addUser(user) {
+    user.client_type = "Individual";
     this.userService.addUser(user).subscribe();
     console.log(user);
     this.route.navigate(["login"])
