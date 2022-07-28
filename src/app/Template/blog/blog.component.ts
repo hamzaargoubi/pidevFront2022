@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Blog } from 'src/app/Model/Blog';
+import { PostServiceService } from 'src/app/Services/post-service.service';
 
 @Component({
   selector: 'app-blog',
@@ -8,9 +9,11 @@ import { Blog } from 'src/app/Model/Blog';
 })
 export class BlogComponent implements OnInit {
  listelement:Blog[];
-  constructor() { }
+  constructor(private postService:PostServiceService) { }
 
   ngOnInit(): void {
+    this.postService.getPosts().subscribe(data =>{ this.listelement=data;
+    console.log(this.listelement)});
     
   }
 

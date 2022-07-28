@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Blog } from '../Model/Blog';
 
 @Injectable({
   providedIn: 'root'
@@ -10,22 +11,33 @@ export class PostServiceService {
   private httpOptions: any;
 
   constructor(private http : HttpClient) {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'mon-jeton',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': 'true',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
-      
-    })
+
   }
 
-
-  getPosts(idpost):Observable<any>{
-      return this.http.get(this.urlpost+"/post/"+idpost);
+  getPostById(id):Observable<any>{
+    return this.http.get(this.urlpost+"/post/"+id);
+  }
+  getPosts():Observable<any>{
+      return this.http.get(this.urlpost+"/post/");
     }
-   addPost(data){
-    return this.http.post(this.urlpost+"/post/",data);
+   addPost(data:Blog,file: File){
+    const formData: FormData = new FormData();
+      formData.append('file', file);
+      formData.append('text',data.text);
+      formData.append('title',data.title);
+      const url = new HttpRequest('POST', this.urlpost+"/post/", formData, {
+        reportProgress: true,
+        responseType: 'json'
+      });
+      return this.http.request(url);
+    // return this.http.post(this.urlpost+"/post/",data);
    }
+   getComments(idpost):Observable<any>{
+    return this.http.get(this.urlpost+"/comment/post-comments/"+idpost);
+  }
+ addComment(data,idPost){
+  console.log('test')
+  return this.http.post(this.urlpost+"/comment/"+idPost,data);
+
+ }
   }

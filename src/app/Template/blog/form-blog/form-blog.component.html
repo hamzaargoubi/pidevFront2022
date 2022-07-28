@@ -14,13 +14,14 @@
             <div class="account-wall">
                 <form class="form-signin">
 				id:
-                <input type="text" class="form-control"  required  name="id" [(ngModel)]="blog.id">
+                <input type="text" class="form-control"  required  name="uuid" [(ngModel)]="blog.uuid">
 				title:
                 <input type="text" class="form-control"  required name="title" [(ngModel)]="blog.title"  >
 				text:
-				<input type="text" class="form-control" name="desc" [(ngModel)]="blog.description" >
-				
-                <button class="btn btn-lg btn-primary btn-block" value="save" value="save"(click)="save()"  type="submit">
+				<input type="text" class="form-control" name="text" [(ngModel)]="blog.text" >
+				<input type="file" mat-raised-button color="primary" accept="image/*"
+                          (change)="onSelectFile($event)" />
+                <button class="btn btn-lg btn-primary btn-block" value="save" (click)="save()"  type="submit">
                    Save</button>
                 <label class="checkbox pull-left">
                 </label>

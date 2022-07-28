@@ -1,8 +1,9 @@
 import { User } from "./User";
 
 export class Blog{
-  id : number;
-  description: string;
+  uuid : string;
+  text: string;
   title : string ;
   idUser:User;
+  image:string
     }

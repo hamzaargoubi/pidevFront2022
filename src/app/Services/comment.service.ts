@@ -12,8 +12,10 @@ urlcomment="http://localhost:8081/commment/";
   getComments(idpost):Observable<any>{
       return this.http.get(this.urlcomment+"post-comments/"+idpost);
     }
-   addComment(data){
-    return this.http.post(this.urlcomment,data);
+   addComment(data,idPost){
+    console.log('test')
+    return this.http.post(this.urlcomment+idPost,data);
+
    }
    
 

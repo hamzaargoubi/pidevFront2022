@@ -37,7 +37,7 @@ const routes: Routes = [
   {path: "about", component: AboutComponent},
   {path: "bank", component: BankComponent},
   {path: "blog", component: BlogComponent},
-  {path: "blog/blog-details", component: BlogDetailsComponent},
+  {path: "blog/blog-details/:id", component: BlogDetailsComponent},
   {path: "blogelement", component: BlogElementComponent},
   {path: "blogform", component: FormBlogComponent},
 
