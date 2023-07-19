@@ -22,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if (true) {
-      request = this.addToken(request, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MUBtYWlsLmNvbSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MS9sb2dpbiIsImV4cCI6MTY4OTY0MzAxOH0.FU7MyYLvnqkawEuDMF-bY-E3Qs4Zz8jzMB8RLDLooxw");
+      request = this.addToken(request, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MUBtYWlsLmNvbSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MS9sb2dpbiIsImV4cCI6MTY4OTgxMjQxMX0.ce_ZlMTBBajf8e-xnam2jFgKfshRwhTDzoFCU7edDIY");
     }
 
     return next.handle(request).pipe(catchError(error => {

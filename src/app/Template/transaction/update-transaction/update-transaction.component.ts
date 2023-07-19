@@ -23,7 +23,7 @@ export class UpdateTransactionComponent implements OnInit {
       emailSource : string;
       amount : number;
       description : string;
-      date : Date;
+      date : string;
 
   showModal: boolean = false;
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class UpdateTransactionComponent implements OnInit {
     });
     this.transactionService.getTransactionByUUID(this.id).subscribe((data:Transaction)=>{
       const unformatedDate = data.date
-      this.date = new Date(this.datePipe.transform(unformatedDate, 'yyyy-MM-dd'));
+      this.date = this.datePipe.transform(unformatedDate, 'yyyy-MM-dd');
       this.emailRecipient = data.recipient.email
       this.emailSource = data.source.email
       this.amount = data.amount
@@ -66,6 +66,8 @@ export class UpdateTransactionComponent implements OnInit {
   closeModal() {
     // Close the success modal
     this.showModal = false;
+    this.router.navigateByUrl('/transactionList');
+
   }
 
 }

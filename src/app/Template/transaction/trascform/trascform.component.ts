@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Account } from 'src/app/Model/Account';
 import { Transaction } from 'src/app/Model/Transaction';
 import { TransactionService } from 'src/app/Services/transaction.service';
@@ -10,7 +11,7 @@ import { TransactionService } from 'src/app/Services/transaction.service';
 })
 export class TrascformComponent implements OnInit {
 
-  constructor(private transactionService:TransactionService) { }
+  constructor(private transactionService:TransactionService, private router:Router) { }
 
   ngOnInit(): void {
     this.date = new Date();
@@ -41,16 +42,20 @@ export class TrascformComponent implements OnInit {
         // Handle the response
         this.showModal = true;
         console.log('Post request successful:', response);
-      },
+        
+           },
       error => {
         // Handle the error
         this.showModal = true;
         console.error('Error occurred:', error);
       }
     );
+    
   }
   closeModal() {
     // Close the success modal
     this.showModal = false;
+    this.router.navigateByUrl('/transactionList');
+    
   }
 }

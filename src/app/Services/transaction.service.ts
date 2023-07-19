@@ -19,8 +19,9 @@ export class TransactionService {
     return this.http.post(this.url,transaction);
   }
 
-  updateTransaction(transaction) {
-    return this.http.put(this.url,transaction)
+  updateTransaction(transaction:Transaction) {
+    console.log(transaction)
+    return this.http.put(this.url+transaction.id,transaction)
   }
 
   getTransactions(){
