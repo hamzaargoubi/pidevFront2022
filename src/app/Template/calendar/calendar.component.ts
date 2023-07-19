@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
-import { EventService } from 'src/app/Services/event.service';
 import { Tooltip } from 'Tooltip';
 
 @Component({
@@ -21,7 +20,7 @@ export class CalendarComponent implements OnInit {
     eventColor: 'rgba(140,47,192,1)'
   };
   allEvents: any[];
-  constructor(private eventSer: EventService) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.getEvents();

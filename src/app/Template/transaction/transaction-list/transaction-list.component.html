@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>List of Transactions</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Source</th>
+        <th>Recipient</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Delete</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.source.email }}</td>
+        <td>{{ transaction.recipient.email }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.description }}</td>
+        <td>{{ transaction.date|date }}</td>
+        <td> <a [routerLink]="['/transactionUpdate/',transaction.id]" class="btn btn-secondary">update</a> </td>
+        <td> <button (click)="delete(transaction.id)" class="btn btn-danger">Delete</button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

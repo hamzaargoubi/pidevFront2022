@@ -14,7 +14,6 @@ import { AboutComponent } from './Template/home/about/about.component';
 import { FooterComponent } from './Template/footer/footer.component';
 import { MenuComponent } from './Template/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { EventComponent } from './Template/Events/event/event.component';
 import { PublicationsComponent } from './Template/publications/publications.component';
 import { RegisterComponent } from './Template/register/register.component';
 import { NotfoundComponent } from './Template/notfound/notfound.component';
@@ -25,9 +24,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { EventDetailsComponent } from './Template/Events/event-details/event-details.component';
-import { CommentComponent } from './Template/Events/comment/comment.component';
-import { FormEventComponent } from './Template/Events/form-event/form-event.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -35,8 +31,6 @@ import { AuthGuard } from './Services/auth.guard';
 import { AuthenticationService } from './Services/authentication.service';
 import { RandomGuard } from './Services/random.guard';
 import { TokenInterceptor } from './Services/token.interceptor';
-import { UpdateEventComponent } from './Template/Events/update-event/update-event.component';
-import { DeleteEventComponent } from './Template/Events/delete-event/delete-event.component';
 
 
 import {AssociationService} from './Services/association.service';
@@ -61,6 +55,12 @@ import { BlogElementComponent } from './Template/blog/blog-element/blog-element.
 import { FormBlogComponent } from './Template/blog/form-blog/form-blog.component';
 import { BlogDetailsComponent } from './Template/blog/blog-details/blog-details.component';
 import { CommentElementComponent } from './Template/Comment/comment-element/comment-element.component';
+import { TrascformComponent } from './Template/transaction/trascform/trascform.component';
+import { TransactionListComponent } from './Template/transaction/transaction-list/transaction-list.component';
+import { DeleteTransactionComponent } from './Template/transaction/delete-transaction/delete-transaction.component';
+import { UpdateTransactionComponent } from './Template/transaction/update-transaction/update-transaction.component';
+
+
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -71,29 +71,20 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
     SlideComponent,
     AboutComponent,
     MemberComponent,
     FooterComponent,
     MenuComponent,
-    EventComponent,
     PublicationsComponent,
     RegisterComponent,
     NotfoundComponent,
-    EventDetailsComponent,
-    CommentComponent,
-    FormEventComponent,
-    CommentComponent,
-    UpdateEventComponent,
-    DeleteEventComponent,
     AddOrUpdateAssociationComponent,
     ReclamationComponent,
     ShowAssociationComponent,
     ConfirmDeleteComponent,
     AssociationComponent,
-    CalendarComponent,
     ContactComponent,
     UpdateUserComponent,
     SendVerificationCodeComponent,
@@ -104,12 +95,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FormBlogComponent,
     BlogDetailsComponent,
     FormBlogComponent,
-    CommentElementComponent
-    
-
-
-
-
+    CommentElementComponent,
+    TrascformComponent,
+    TransactionListComponent,
+    DeleteTransactionComponent,
+    UpdateTransactionComponent
   ],
   imports: [
     BrowserModule,

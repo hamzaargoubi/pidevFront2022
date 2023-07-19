@@ -1,0 +1,52 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+  <div class="row justify-content-center">
+<form #form class="align-items">
+  <div class="form-group">
+    <label for="recipient.email" >Enter your Recipient email: </label>
+    <input type="text" class="form-control" name="recipient.email" [(ngModel)]="emailRecipient">
+  </div>
+  <div class="form-group">
+    <label for="source.email" >Enter your Source email: </label>
+    <input type="text" class="form-control" name="source.email" [(ngModel)]="emailSource">
+  </div>
+  <div class="form-group">
+    <label for ="amount"  >Enter Amount: </label>
+    <input type="number" class="form-control" name="amount" [(ngModel)]="amount">
+  </div>
+  <div class="form-group ">
+    <label for="description" >enter  Description: </label>
+    <input type="text" class="form-control" name="description" [(ngModel)]="description">
+  </div>
+  <div class="form-group">
+    <label for="date" > enter  date: </label>
+    <input type="date" class="form-control" name="date" [(ngModel)]="date">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary"  value="save" (click)="transactionUpdate()"  type="submit">submit</button>
+  </div>
+</form>
+</div>
+</div>
+
+<div class="modal" [ngClass]="{'d-block': showModal}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Transaction was Successfull</h5>
+        <button type="button" class="close" (click)="closeModal()">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Transaction has been added!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
